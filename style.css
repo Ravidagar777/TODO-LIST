@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s, color 0.4s;
+}
+
+:root {
+  --bg: linear-gradient(135deg, #6e8efb, #a777e3);
+  --text: #fff;
+  --box-bg: rgba(255,255,255,0.15);
+  --btn-bg: #ff9f43;
+  --btn-hover: #ffa94d;
+  --danger: #ff6b6b;
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #1e1e2f, #2e2e4f);
+  --text: #e6e6e6;
+  --box-bg: rgba(255,255,255,0.08);
+  --btn-bg: #00b894;
+  --btn-hover: #00cea1;
+}
+
+.todo-container {
+  width: 450px;
+  background: var(--box-bg);
+  color: var(--text);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.input-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.input-area input, select, button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+#taskInput {
+  flex: 1;
+}
+
+#timeInput {
+  flex: 1;
+}
+
+#addBtn {
+  background: var(--btn-bg);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#addBtn:hover {
+  background: var(--btn-hover);
+}
+
+ul {
+  list-style: none;
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.1);
+  margin-bottom: 10px;
+  border-radius: 8px;
+  padding: 10px;
+  border-left: 5px solid transparent;
+  transition: background 0.2s;
+}
+
+li.low { border-color: #55efc4; }
+li.medium { border-color: #ffeaa7; }
+li.high { border-color: #ff7675; }
+
+li.completed {
+  background: rgba(0,255,127,0.15);
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+li span {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.time-info {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+li button {
+  align-self: flex-end;
+  margin-top: 4px;
+  background: none;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.footer button {
+  background: var(--danger);
+  border: none;
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
